@@ -1,0 +1,45 @@
+.LV_validation_message{
+    font-weight:bold;
+    margin:0 0 0 5px;
+	font-size:12px;
+	display:inline;
+	
+}
+span { display:inline; }
+.LV_valid {
+    color:#005735;
+	text-align:left;
+	display:inline;
+	width:10px;
+	margin:0 0 0 2px;
+	/*background-color:#F00;*/
+}
+	
+.LV_invalid {
+    color:#CC0000;
+	text-align:left;
+	margin:10px 0px 0 82px;
+	display:block;
+}
+
+.afl .LV_invalid {
+	margin:10px 0 0 108px;
+	display:block;
+	
+}
+    
+.LV_valid_field,
+input.LV_valid_field:hover, 
+input.LV_valid_field:active,
+textarea.LV_valid_field:hover, 
+textarea.LV_valid_field:active {
+    border: 2px solid #005735;
+}
+    
+.LV_invalid_field, 
+input.LV_invalid_field:hover, 
+input.LV_invalid_field:active,
+textarea.LV_invalid_field:hover, 
+textarea.LV_invalid_field:active {
+    border: 2px solid #CC0000;
+}

@@ -1,0 +1,129 @@
+@charset "UTF-8";
+/* CSS Document */
+/*################################################### TYPOGRAPHY ###############################################################*/
+@font-face {
+	font-family: metaNor;
+	src: url('../fonts/MetaOT-Norm.otf');
+	font-weight:normal;
+}
+
+
+h2{ font-size: 17px; font-family: metaNor , Arial, Helvetica, sans-serif !important;font-weight:normal !important; }
+.HL1{ font-size: 35px; font-family: metaNor, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; }
+.HL2{ font-size: 30px; width:800px; font-family: metaNor, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; margin:-17px 0 0 0px; }
+p{ font-family: metaNor, Arial, Helvetica, sans-serif !important; }
+
+/*################################################### Main structure / layout ###############################################################*/
+
+/* ######################################################### Body #########################################################################*/
+body{ background-color:#000; margin:0; padding:0; height:100%; color:#bf77c2; font-size: 17px; font-family: InterstateRegular, Arial, Helvetica, sans-serif !important;font-weight:normal !important;}
+#wrapper{width:100%; background:#000; margin:0; height:1000px; padding:0; background:url('../images/background-main.jpg') 0 0  no-repeat; }
+
+/* ######################################################### Header #########################################################################*/
+header { height:130px; width:100%; background:url('../images/logo.png') 18px 39px no-repeat;  margin:0 5px 0; }
+/* ######################################################### Section #########################################################################*/
+section {color:#ffffff; font-size:14px;}
+section label{color:#bf77c2; font-size:13px; display:block; text-indent:0px; font-weight:700; margin:0 0 3px 0; }
+section label span{ color:#ffffff; font-size:10px; font-weight:100; }
+section input, section select{color:#333; font-size:14px; margin:5px 0px; background-color:#bdbec0; border:0; height:28px; color:#333;}
+section select{}
+section#dealer { width:810px; background:rgba(0,0,0, 0.8); border:4px solid rgba(255,255,255,.5) ; font-family: metaNor, Arial, Helvetica, sans-serif !important; padding:45px 80px ;position:absolute; top:140px; z-index:15; Xleft:-950px;}
+section.nonDealer{ }
+section article#welcomeMsg{ width:850px; padding:55px; position:relative; top:180px; z-index:10; height:750px; }
+section#dealer.guestInfo { width:810px;}
+article p{width:450px; word-spacing:3px; } 
+.registerDealers{ margin:144px 0 0 -10px; line-height:-20px; position: relative; height:58px; width:400px; }
+/* ######################################################### Forms Elements #########################################################################*/
+.line{width:800px; border-bottom:2px #FFF solid; }
+.whiteLine{margin:10px 0 35px 0;}
+.darkPurple{ border-bottom-color:#bf77c2; margin:10px 0 35px 0;}
+.white{ border-bottom-color:#ffffff;}
+
+
+/* input widths */
+
+.title{width:auto; margin:0 10px 0 0;}
+.surname{width:355px;}
+.firstname{width:355px; }
+.dob{width:275px;}
+.passport{width:510px;}
+.mail{width:390px;}
+.phone{width:394px;}
+.jacket{ width:500px; border-right: 2px #eee solid; float:left;  }
+.gender{ width:250px; display:block; }
+.dietaryReq{width:800px;}
+.pickUp{width:390px;  float:left; }
+.fflyer, .depCity, .retCity{width:257px;}
+
+.guests{ width:350px;}
+.guests input, .guests p{display:inline;   }
+.guests p{color:#bf77c2; display:inline; font-weight:bold; padding:0 20px 5px 0px; height:25px; line-height:35px; margin:0;}
+
+.stays{ width:390px; float:left; margin: 0 0 0 5px;  }
+.stays input, .stays p { display:inline;   }
+.stays p{color:#bf77c2; display:inline; font-weight:bold; padding:0 20px 5px 0px; height:25px; line-height:35px; margin:0;}
+
+
+.sizes{ display:inline; margin:0 10px 10px 0; }
+.sizes input, .sizes p { display:inline;  }
+.sizes p { color:#bf77c2; display:inline; font-weight:bold; padding:0 20px 5px 0px; height:25px; line-height:35px; margin:0; }
+.sizes input {}
+
+.genders{ display:inline; margin:0 5px 10px 0;  }
+.genders p {color:#bf77c2; font-weight:bold; padding:0 0px 5px 0px; height:25px; line-height:35px; margin:0; }
+.genders input {}
+.genders input, .genders p{display:inline; }
+.inline{display:inline; display:inline;}
+.radioBig {
+  width:25px; height:15px; margin:10px 0 0 0; padding:15px 0 10px 0 ;
+   background:#F00;
+}
+
+#size{ width:810px; }
+.guestInfo {display:none;}
+.row1{ display:inline-block; margin:0 10px 10px 0;}
+.row1 input{width:100%;}
+
+.row2{display:inline-block; margin:0 10px 10px 0;}
+.row2 input{width:100%;}
+
+.row3{display:inline-block; margin:0 10px 10px 0;}
+.row3 input{width:100%;}
+
+.row4 {display:inline-block; margin:0 10px 10px 0;}
+.row4 input {width:100%;}
+.row5 {display:inline-block; margin:0 10px 10px 0;}
+.row5 input{width:100%;}
+
+.submmitBtn{ background:url("../images/submit.jpg") 600px 10px   no-repeat; width:800px; height:60px;}
+.submmitBtn:hover{background:url("../images/submit.jpg") 600px -55px   no-repeat; width:800px; height:60px;}
+
+/* ######################################################### artical #########################################################################*/
+article {}
+
+/* ######################################################### footer #########################################################################*/
+footer { margin:-40px 0 0 44px; font-family: metaNor, Arial, Helvetica, sans-serif !important; font-size:13px; color:rgba(255,255,255,4); font-weight:bold;}
+footer .socialT{ background:url("../images/t.jpg") -5px -7px no-repeat; width:0px !important; height:30px; padding:0 30px 0 0; display:block; float:left;}
+footer .socialf{ background:url("../images/f.jpg") -3px -7px no-repeat; width:0px !important; height:30px; padding:0  44px 0 0px; display:block; float:left;}
+
+footer ul{ list-style:none; margin:0 0 0 15px; padding:0;}
+footer li{ display:inline; float:left; width:auto; margin-left:5px; padding:0 5px; }
+footer li span{ color:rgb(130,69,157) ; }
+footer li:last-child{ color: rgba(255,255,255,1); margin:0px 0 0 470px; float:right; padding:0 50px;}
+/* ######################################################### Table #########################################################################*/
+
+
+/* ######################################################### colours #########################################################################*/
+
+
+
+
+
+/* ######################################################### Table Spacing #########################################################################*/
+
+.left{ text-align:left; width:10px; }
+.right{ text-align:left; width:10px;}
+
+.center { text-align:center; }
+
+
