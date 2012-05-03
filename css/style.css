@@ -2,19 +2,24 @@
 /* CSS Document */
 /*################################################### TYPOGRAPHY ###############################################################*/
 @font-face {
-	font-family: metaNor;
+	font-family: "metaNor";
 	src: url('../fonts/MetaOT-Norm.otf');
 	font-weight:normal;
 }
+@font-face {
+    font-family: "metaNorB";
+    src: url("../fonts/InfinMetBolRomAlt");
+    font-weight: bold;   
+	
+}
 
-
-h2{ font-size: 17px; font-family: metaNor , Arial, Helvetica, sans-serif !important;font-weight:normal !important; }
-.HL1{ font-size: 35px; font-family: metaNor, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; }
-.HL2{ font-size: 30px; width:800px; font-family: metaNor, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; margin:-17px 0 0 0px; }
-p{ font-family: metaNor, Arial, Helvetica, sans-serif !important; }
 
 /*################################################### Main structure / layout ###############################################################*/
-
+h2{ font-size: 17px; font-family: metaNor , Arial, Helvetica, sans-serif !important;font-weight:normal !important; }
+.HL1{ font-size: 35px; font-family: metaNor, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; }
+.HL2{ font-size: 30px; width:800px; font-family: metaNorB, Arial, Helvetica, sans-serif !important; text-emphasis:none; font-weight:light !important; line-height:38px; margin:-17px 0 0 0px; }
+p{ font-family: metaNor, Arial, Helvetica, sans-serif !important; }
+.pink{ color:rgb(197,2,115); font-family: metaNorB, Arial, Helvetica, sans-serif !important; }
 /* ######################################################### Body #########################################################################*/
 body{ background-color:#000; margin:0; padding:0; height:100%; color:#bf77c2; font-size: 17px; font-family: InterstateRegular, Arial, Helvetica, sans-serif !important;font-weight:normal !important;}
 #wrapper{width:100%; background:#000; margin:0; height:1000px; padding:0; background:url('../images/background-main.jpg') 0 0  no-repeat; }
@@ -23,11 +28,10 @@ body{ background-color:#000; margin:0; padding:0; height:100%; color:#bf77c2; fo
 header { height:130px; width:100%; background:url('../images/logo.png') 18px 39px no-repeat;  margin:0 5px 0; }
 /* ######################################################### Section #########################################################################*/
 section {color:#ffffff; font-size:14px;}
-section label{color:#bf77c2; font-size:13px; display:block; text-indent:0px; font-weight:700; margin:0 0 3px 0; }
-section label span{ color:#ffffff; font-size:10px; font-weight:100; }
+section label{color:#bf77c2; font-size:13px; display:block; text-indent:0px; font-weight:bold; margin:0 0 3px 0; }
+section label span{ color:#ffffff; font-size:10px; font-weight:light; }
 section input, section select{color:#333; font-size:14px; margin:5px 0px; background-color:#bdbec0; border:0; height:28px; color:#333;}
-section select{}
-section#dealer { width:810px; background:rgba(0,0,0, 0.8); border:4px solid rgba(255,255,255,.5) ; font-family: metaNor, Arial, Helvetica, sans-serif !important; padding:45px 80px ;position:absolute; top:140px; z-index:15; Xleft:-950px;}
+section#dealer { width:810px; background:rgba(0,0,0, 0.9); border:4px solid rgba(255,255,255,.5) ; font-family: metaNor, Arial, Helvetica, sans-serif !important; padding:45px 45px ;position:absolute; top:140px; z-index:15; Xleft:-950px;}
 section.nonDealer{ }
 section article#welcomeMsg{ width:850px; padding:55px; position:relative; top:180px; z-index:10; height:750px; }
 section#dealer.guestInfo { width:810px;}
@@ -41,19 +45,21 @@ article p{width:450px; word-spacing:3px; }
 
 
 /* input widths */
-
+.lableFont{  font-family: metaNorB, Arial, Helvetica, sans-serif !important; font-weight:bold;}
 .title{width:auto; margin:0 10px 0 0;}
 .surname{width:355px;}
 .firstname{width:355px; }
-.dob{width:275px;}
-.passport{width:510px;}
+.dob{width:150px;}
+.passport{width:473px;}
+.expiry{width:150px;}
 .mail{width:390px;}
-.phone{width:394px;}
+.phone{width:397px;}
 .jacket{ width:500px; border-right: 2px #eee solid; float:left;  }
 .gender{ width:250px; display:block; }
 .dietaryReq{width:800px;}
 .pickUp{width:390px;  float:left; }
-.fflyer, .depCity, .retCity{width:257px;}
+
+.fflyer, .depCity, .retCity{width:258px;}
 
 .guests{ width:350px;}
 .guests input, .guests p{display:inline;   }
@@ -62,7 +68,6 @@ article p{width:450px; word-spacing:3px; }
 .stays{ width:390px; float:left; margin: 0 0 0 5px;  }
 .stays input, .stays p { display:inline;   }
 .stays p{color:#bf77c2; display:inline; font-weight:bold; padding:0 20px 5px 0px; height:25px; line-height:35px; margin:0;}
-
 
 .sizes{ display:inline; margin:0 10px 10px 0; }
 .sizes input, .sizes p { display:inline;  }

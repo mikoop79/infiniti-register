@@ -4,13 +4,13 @@
 $(document).ready(function (){
 	
 	
-	$("#dealer").css({opacity:"0.8"});
-	$("#welcomeMsg, footer").hide();
+	$("#dealer").css({opacity:"1"});
+	
 	
 	
 /*	######################################## form ##############################################
 	*/
-	
+	$('#dealer span:contains("insert")').addClass("pink");
 	$('#dealer label[for!="X"]').addClass("lableFont");
 	
 	

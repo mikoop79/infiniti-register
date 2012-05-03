@@ -2,7 +2,7 @@
     font-weight:bold;
     margin:0 0 0 5px;
 	font-size:12px;
-	display:inline;
+	display: none !important;
 	
 }
 span { display:inline; }
@@ -41,5 +41,5 @@ input.LV_invalid_field:hover,
 input.LV_invalid_field:active,
 textarea.LV_invalid_field:hover, 
 textarea.LV_invalid_field:active {
-    border: 2px solid #CC0000;
+    border: 3px solid #c50273;
 }

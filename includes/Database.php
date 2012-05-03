@@ -2,17 +2,17 @@
 
 class Database {
 
-  private static $db_host       = 'localhost';
-   private static $db_port       = '5598';
-   private static $db_name       = 'infiniti';
-   private static $db_username   = 'root';
-   private static $db_password   = 'coop';
+//  private static $db_host       = 'localhost';
+//   private static $db_port       = '5598';
+//   private static $db_name       = 'infiniti';
+//   private static $db_username   = 'root';
+//   private static $db_password   = 'coop';
   // 
-  // private static $db_host       = 'localhost';
-  // private static $db_port       = '3306';
-  // private static $db_name       = 'magnify';
-  // private static $db_username   = 'magnify';
-  // private static $db_password   = 'wior0br7';
+ private static $db_host       = 'localhost';
+ private static $db_port       = '8888';
+ private static $db_name       = 'root';
+ private static $db_username   = 'root';
+ private static $db_password   = 'root';
   
   
   

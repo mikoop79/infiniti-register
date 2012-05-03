@@ -25,7 +25,7 @@
 <link rel="stylesheet" href="css/validation.css"  type="text/css" media="all" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-<script type="text/javascript" src="js/validation.js"></script>
+<script type="text/javascript" src="js/livevalidation_standalone.compressed.js"></script>
 <script type="text/javascript" src="js/calls.js"></script>
 
 </head>
@@ -37,31 +37,18 @@
 		</header>
 			<section>
 				<article id="welcomeMsg">
-					<p class="HL1">Your inspirational <br>
-journey starts here.</p>
-					 <p>The Infiniti New Zealand Test Drive Experience will take place in early June 2012 and will showcase two exciting vehicles, the Infiniti FX performance cross-over and the Infiniti M sedan.<br>
-Your experience will showcase in the best Queenstown has to offer including fine food, exhilarating roads and world-renowned scenery.
-</p>
-					 <a href="#"><p class="registerDealers"><img src="images/confirm.png"></p></a>
-					<!-- <p class="registerNonDealers">open nonDealers</p>-->
+					<h1>Welcome mesage</h1>
+					 <p>Sub content</p>
+					 <p class="registerDealers">open Dealers</p>
+					 <p class="registerNonDealers">open nonDealers</p>
 				</article>
 			</section>
 			<!-- DEALER - FORM - PANEL -->		
 			<section id="dealer">
 				<form action="addDealer.php" method="GET">
 					<article>
-					<p class="HL2">Registration Form - New Zealand Drive Experience</p>
+					<h1>Registration Form - New Zealand Drive Experience</h1>
 					<div class="line darkPurple" ></div>
-                    <p>
-                    Please confirm your details so that a detailed itinerary can be sent prior to the event.
-                    </p>
-                    <p>
-                    Date of Event: Please confirm you are available to travel <span>insert dates here</span>
-                    </p>
-                    <p>
-                    PERSONAL DETAILS
-                    </p>
-                    <hr><br>
 					<div class="row1 title">
 					<label for="title">Title*</label>
 					<select name="title" id="title">
@@ -103,8 +90,6 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						<div id="size">
 								<div class="sizes jacket">
 								<label for="size">Jacket Size: *</label>
-                                <input type="radio" name="size" id="XS" value="XS"  class="radioBig"/>
-									<p>XS</p>
 									<input type="radio" name="size" id="S" value="S"  class="radioBig"/>
 									<p>S</p>
 									<input type="radio" name="size" id="M" value="M" class="radioBig" />
@@ -115,9 +100,8 @@ Your experience will showcase in the best Queenstown has to offer including fin
 									<p>XL</p>
 									<input type="radio" name="size" id="XXL" value="XXL"  class="radioBig"/>
 									<p>XXL</p>
-                                    <input type="radio" name="size" id="XXXL" value="XXXL"  class="radioBig"/>
-									<p>XXXL</p>
-									
+									<p>Other:</p>
+									<input type="text" name="size" id="other" value="" />
 								</div><!-- end of jackets -->
 								<div class="genders gender">
 								<label for="gender">Gender: *</label>
@@ -138,7 +122,8 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						</div>
 						
 							
-								<div class="guestInfo">
+							<!--  ////////////////////// GUEST INFO ////////////////////////////// -->
+							<div class="guestInfo">
 							<h1>GUEST DETAILS</h1>
 							<div class="line whiteLine"></div>
 							<div class="row1 title">
@@ -178,36 +163,11 @@ Your experience will showcase in the best Queenstown has to offer including fin
 										<div class="row4 dietaryReq">
 											<label for="guest_dietaryRequirements">Dietary Requirements: <span>(Any other considerations to note)</span></label><input name="guest_dietaryRequirements" id="guest_dietaryRequirements" value="" />
 										</div>
-										<div id="size">
-								<div class="sizes jacket">
-								<label for="size" id="SizeJ">Jacket Size: *</label>
-                                	<input type="radio" name="guest_size" id="XS" value="XS"  class="radioBig"/>
-                                    <p>XS</p>
-									<input type="radio" name="guest_size" id="S" value="S"  class="radioBig"/>
-									<p>S</p>
-									<input type="radio" name="guest_size" id="M" value="M" class="radioBig" />
-									<p>M</p>
-									<input type="radio" name="guest_size" id="L" value="L"  class="radioBig" />
-									<p>L</p>
-									<input type="radio" name="guest_size" id="XL" value="XL" class="radioBig" />
-									<p>XL</p>
-									<input type="radio" name="guest_size" id="XXL" value="XXL"  class="radioBig"/>
-									<p>XXL</p>
-                                    <input type="radio" name="guest_size" id="XXXL" value="XXXL"  class="radioBig"/>
-                                    <p>XXXL</p>
-									
-								</div><!-- end of jackets -->
-								<div class="genders gender">
-								<label for="gender">Gender: *</label>
-									<input type="radio" name="guest_gender" id="M" value="M"  class="radioBig"/>
-									<p>MALE</p>
-									<input type="radio" name="guest_gender" id="F" value="F"  class="radioBig"/>
-									<p>FEMALE</p>
-								</div>	<!--  end of genders -->
-						</div><!--  end of size -->
 							</div>
 							
 							<!--  ////////////////////// END OF GUEST INFO ////////////////////////////// -->
+							
+							
 							
 							<!--  ////////////////////// CONTACT DETAILS //////////////////////////////////////////////////////////////////////////////// -->
 						<div class="contactDetails">
@@ -219,18 +179,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 								<div class="row1 phone">
 									<label for="phoneNumber">Phone number*</label><input type="text" name="phoneNumber" id="phoneNumber" value="" />
 								</div>
-                                <div class="row1 phone">
-									<label for="phoneNumber">Pick Up Address*</label><input type="text" name="pickUp" id="pickUp" value="" />
-								</div>
 								
-                                <label for name="guest">Will you be extending your stay in QeensTown?</label>
-                                <div class="sizes ">
-							<input type="radio" id="stay" name="stay" value="No" class="radioBig" checked />
-							<p>No</p>
-						</div>	
-						<div class="sizes ">
-						    <input type="radio" id="stay" name="stay" value="Yes" class="radioBig"/>
-						    <p>Yes</p>
 						</div>
 						
 						
@@ -252,20 +201,16 @@ Your experience will showcase in the best Queenstown has to offer including fin
 			
 			<footer>
 				<ul>
-					<li>&copy; 2012 INFINITY</li>
-					<li>>> DISCOVER <span>OUR STORIES</span></li>
-					<li>>> INFINITI <span>COMMUNITY</span></li>
-					<li>>> FOLLOW <span>INFINITI</span></li>
-					<li class="socialT"></li>
-                    <li class="socialF"></li>
-					<li>www.infiniticars.com.au</li>
+					<li>link 1</li>
+					<li>link 2</li>
+					<li>link 3</li>
+					<li>link 4</li>
+					<li>link 5</li>
+					<li>www.infiniti.com.au</li>
 				</ul>
 			</footer>
 
 	</div>
-    
- <script type="text/javascript" src="js/validScript.js"></script>
-
 </body>
 
 </html>

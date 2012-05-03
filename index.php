@@ -4,19 +4,18 @@
 include './includes/Database.php';
 
 
-	if (isset($_GET['email'])){
-		$email = $_GET['email'];
-		
-		$user = Database::prePopulate($email);
-		
-    echo '<pre>';
-	print_r($user);
-	echo '</pre>';
-	
-	} else {
-		headers('Location: notInvited.html');
-	}
-
+//	if (isset($_GET['email'])){
+//		$email = $_GET['email'];
+//		
+//		$user = Database::prePopulate($email);
+//		
+//    echo '<pre>';
+//	print_r($user);
+//	echo '</pre>';
+//	
+//	} else {
+//		header('Location: notInvited.html');
+//	}
 
 ?>
 
@@ -37,9 +36,7 @@ include './includes/Database.php';
 
 <body>
 	<div id="wrapper">
-		<header>
-			
-		</header>
+		<header></header>
 			<section>
 				<article id="welcomeMsg">
 					<p class="HL1">Your inspirational <br>
@@ -53,17 +50,17 @@ Your experience will showcase in the best Queenstown has to offer including fin
 			</section>
 			<!-- DEALER - FORM - PANEL -->		
 			<section id="dealer">
-				<form action="addDealer.php" method="GET">
+				<form action="nonDealers.php" method="POST">
 					<article>
 					<p class="HL2">Registration Form - New Zealand Drive Experience</p>
 					<div class="line darkPurple" ></div>
-					<p>
+                    <p style="width:100%;">
                     Please confirm your details so that a detailed itinerary can be sent prior to the event.
                     </p>
-                    <p>
-                    Date of Event: Please confirm you are available to travel <insert dates here>
+                    <p style="width:100%;">
+                    Date of Event: Please confirm you are available to travel "ADD DATE HERE"
                     </p>
-                     <h1>GUEST DETAILS</h1>
+                     <h1>PERSONAL DETAILS</h1>
                     <div class="line whiteLine" ></div>
 					<div class="row1 title">
 					<label for="title">Title*</label>
@@ -88,10 +85,13 @@ Your experience will showcase in the best Queenstown has to offer including fin
 							<label for="dob">Date of Birth: *</label><input type="text" placeholder="DD/MM/YYYY" name="dob" id="dob" value="" />
 						</div>
 						<div class="row2 passport">
-							<label for="ppNumber">Passport Number: * <span>(Please ensure you have an up to date passport for the duration of your travel)</span></label><input type="text" name="ppNumber" id="ppNumber" value="" />
+							<label for="ppNumber">Passport Number: *</label><input type="text" name="ppNumber" id="ppNumber" value="" />
+						</div>
+						<div class="row2 expiry">
+							<label for="expiry">Passport Expiry: *</label><input type="text" name="expiry" id="expiry" value="" />
 						</div>
 						<div class="row3 fflyer">
-							<label for="frequentFlyerNo">Frequent Flyer No: *</label><input type="text" name="frequentFlyerNo" id="frequentFlyerNo" value="" />
+							<label for="frequentFlyerNo">Frequent Flyer No:</label><input type="text" name="frequentFlyerNo" id="frequentFlyerNo" value="" />
 						</div>
 						<div class="row3 depCity">
 							<label for="departureCity">Departure City: *</label><input type="text" name="departureCity" id="departureCity" value="" />
@@ -101,6 +101,14 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						</div>
 						<div class="row4 dietaryReq">
 							<label for="dietaryRequirements">Dietary Requirements: <span>(Any other considerations to note)</span></label><input name="dietaryRequirements" id="dietaryRequirements" value="" />
+						</div>
+						<div class="row1 mail">
+							<label for="emergencyContact">Emergency Contact: *</label>
+							<input type="text" name="emergencyContact" id="emergencyContact" value="" />
+						</div>
+						<div class="row1 phone">
+							<label for="emergencyPhone">Emergency Contact Phone: *</label>
+							<input type="text" name="emergencyPhone" id="emergencyPhone" value="" />
 						</div>
 						
 						<div id="size">
@@ -129,7 +137,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 									<input type="radio" name="gender" id="F" value="F"  class="radioBig"/>
 									<p>FEMALE</p>
 								</div>	<!--  end of genders -->
-						</div><!--  end of size --><br/>
+						</div><!--  end of size -->
 						<div class="guests">
 						<div class="sizes inline" style="">
 							<label for name="guest">Do you have a guest?</label>
@@ -141,13 +149,14 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						    <p>Yes</p>
 						</div>
 						</div>
+						
 							
 								<div class="guestInfo">
 							<h1>GUEST DETAILS</h1>
 							<div class="line whiteLine"></div>
 							<div class="row1 title">
 								<label for="title">Title*</label>
-									<select name="guest_title" id="guest_title">
+									<select name="guest_title" id="title">
 											<option value="Mr">Mr</option>
 											<option value="Mrs">Mrs</option>
 											<option value="Miss">Miss</option>
@@ -168,10 +177,13 @@ Your experience will showcase in the best Queenstown has to offer including fin
 											<label for="guest_dob">Date of Birth: *</label><input type="text" placeholder="DD/MM/YYYY" name="guest_dob" id="guest_dob" value="" />
 										</div>
 										<div class="row2 passport">
-											<label for="guest_ppNumber">Passport Number: *<span>(Please ensure you have an up to date passport for the duration of your travel)</span></label><input type="text" name="guest_ppNumber" id="guest_ppNumber" value="" />
+											<label for="guest_ppNumber">Passport Number: *</label><input type="text" name="guest_ppNumber" id="guest_ppNumber" value="" />
+										</div>
+										<div class="row2 expiry">
+											<label for="expiry">Passport Expiry: *</label><input type="text" name="guest_expiry" id="guest_expiry" value="" />
 										</div>
 										<div class="row3 fflyer">
-											<label for="guest_frequentFlyerNo">Frequent Flyer No: *</label><input type="text" name="guest_frequentFlyerNo" id="guest_frequentFlyerNo" value="" />
+											<label for="guest_frequentFlyerNo">Frequent Flyer No: </label><input type="text" name="guest_frequentFlyerNo" id="guest_frequentFlyerNo" value="" />
 										</div>
 										<div class="row3 depCity">
 											<label for="guest_departureCity">Departure City: *</label><input type="text" name="guest_departureCity" id="guest_departureCity" value="" />
@@ -182,9 +194,17 @@ Your experience will showcase in the best Queenstown has to offer including fin
 										<div class="row4 dietaryReq">
 											<label for="guest_dietaryRequirements">Dietary Requirements: <span>(Any other considerations to note)</span></label><input name="guest_dietaryRequirements" id="guest_dietaryRequirements" value="" />
 										</div>
-						<div id="size">
+										<div class="row1 mail">
+											<label for="guest_emergencyContact">Emergency Contact: *</label>
+											<input type="text" name="guest_emergencyContact" id="guest_emergencyContact" value="" />
+										</div>
+										<div class="row1 phone">
+											<label for="guest_emergencyPhone">Emergency Contact Phone: *</label>
+											<input type="text" name="guest_emergencyPhone" id="guest_emergencyPhone" value="" />
+										</div>
+										<div id="size">
 								<div class="sizes jacket">
-								<label for="size">Jacket Size: *</label>
+								<label for="size" id="SizeJ">Jacket Size: *</label>
                                 	<input type="radio" name="guest_size" id="XS" value="XS"  class="radioBig"/>
                                     <p>XS</p>
 									<input type="radio" name="guest_size" id="S" value="S"  class="radioBig"/>
@@ -200,7 +220,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
                                     <input type="radio" name="guest_size" id="XXXL" value="XXXL"  class="radioBig"/>
                                     <p>XXXL</p>
 									
-								</div><!-- end of sizes -->
+								</div><!-- end of jackets -->
 								<div class="genders gender">
 								<label for="gender">Gender: *</label>
 									<input type="radio" name="guest_gender" id="M" value="M"  class="radioBig"/>
@@ -219,7 +239,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 								<div class="line whiteLine"></div>
 								<div class="row1 mail">
 									<label for="MailAddress">Mailing Address*</label>
-									<input type="text" name="MailAddress" id="MailAddress" value="" />
+									<input type="text" name="MailAddress" id="mailAddress" value="" />
 								</div>
 								<div class="row1 phone">
 									<label for="phoneNumber">Phone number*</label>
@@ -236,14 +256,16 @@ Your experience will showcase in the best Queenstown has to offer including fin
 									
 						    		<input type="radio" id="stay" name="stay" value="Yes" class="radioBig"/>
 						    		<p>Yes</p>
+						    		<input type="text" id="stay" name="stayInfo" value="" placeholder="More Info" style="width:200px;" />
 						    	</div>
 						    </div>
+						    <input type="submit" value="Submit" id="submit" class="submmitBtn" />
 						</div> <!--  end of contact details -->
 						
 						
 						
 						
-						<input type="submit" value="Submit" id="submit" class="submmitBtn" />
+						
 					</article>
 				</form>
 			</section>
@@ -270,7 +292,8 @@ Your experience will showcase in the best Queenstown has to offer including fin
 			</footer>
 
 	</div>
-	 <script type="text/javascript" src="js/validScript.js"></script>
+ <script type="text/javascript" src="js/svalidScript.js"></script>
+
 </body>
 
 </html>

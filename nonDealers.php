@@ -18,6 +18,9 @@ $nonDealerID = 2;
 			
 	} else {
 		
+		echo $email . ' exists.';
+		
+		
 	}
 	 	
 	 	
@@ -29,14 +32,16 @@ $nonDealerID = 2;
 	$firstname=$_POST['firstname'];
 	$dob=$_POST['dob'];
 	$ppNumber=$_POST['ppNumber'];
+	$expiry=$_POST['expiry'];
 	$frequentFlyerNo=$_POST['frequentFlyerNo'];
 	$departureCity=$_POST['departureCity'];
 	$returnCity=$_POST['returnCity'];
 	$dietaryRequirements=$_POST['dietaryRequirements'];
+	$emergencyContact=$_POST['emergencyContact'];
+	$emergencyPhone=$_POST['emergencyPhone'];
 	$size=$_POST['size'];
 	$guest=$_POST['guest'];
 	$gender=$_POST['gender'];
-	
 	// extra details
 	$mailAddress=$_POST['mailAddress'];
 	$phoneNumber=$_POST['phoneNumber'];
@@ -53,10 +58,13 @@ $nonDealerID = 2;
 		$guest_firstname = $_POST['guest_firstname'];
 		$guest_dob = $_POST['guest_dob'];
 		$guest_ppNumber = $_POST['guest_ppNumber'];
+		$guest_expiry = $_POST['guest_expiry'];
 		$guest_frequentFlyerNo=$_POST['guest_frequentFlyerNo'];
 		$guest_departureCity=$_POST['guest_departureCity'];
 		$guest_returnCity=$_POST['guest_returnCity'];
 		$guest_dietaryRequirements=$_POST['guest_dietaryRequirements'];
+		$guest_emergencyContact=$_POST['guest_emergencyContact'];
+		$guest_emergencyPhone=$_POST['guest_emergencyPhone'];
 		$guest_size = $_POST['guest_size'];
 		$guest_gender = $_POST['guest_gender'];	
 	}
