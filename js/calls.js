@@ -16,8 +16,9 @@ $(document).ready(function (){
 	
 	$("p.registerDealers").click(function () { 
 	      var dealer = $("#dealer");
-	    	  dealer.animate({left:0});
-	    	  
+	    	  dealer.animate({left:"47px"});
+	    	
+			  
 	    });
 	
 	
