@@ -1,31 +1,25 @@
-<?php
-
-
-//include './includes/functions.inc.php';
-////include './includes/Database.php';
-//
-//if (isset($_GET['email'])){
-//	$email = $_GET['email'];
-//} else {
-//	header('Location: noEmail.html');
-//	exit;
-//	
-//}
-
-
-?>
-
 
 <!DOCTYPE html />
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Infiniti</title>
+<link rel="stylesheet" href="css/fontstack.css"  type="text/css" media="all" />
 <link rel="stylesheet" href="css/style.css"  type="text/css" media="screen" />
 <link rel="stylesheet" href="css/validation.css"  type="text/css" media="all" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-
+<!--[if IE 6]>
+<script src="./js/DD_belatedPNG.js"></script>
+<script>
+  /* EXAMPLE */
+  DD_belatedPNG.fix('.registerDealers, #dealer, #submit, .submmitBtn:hover, .submmitBtn ');
+  
+  /* string argument can be any CSS selector */
+  /* .png_bg example is unnecessary */
+  /* change it to what suits you! */
+</script>
+<![endif]-->
 
 </head>
 
@@ -37,31 +31,29 @@
 			<section>
 				<article id="welcomeMsg">
 					<p class="HL1">Thank you for confirming<br>your details.</p>
-					 <p>Your itinerary will be sent in the coming week. We look forward to <br>
+					 <p class="para">Your itinerary will be sent in the coming week. We look forward to <br>
 an exciting experience with you in New Zealand.
 </p>
-					 <a href="http://www.infiniticars.com.au"><p class="gotoWebsite"><img src="images/thankyouBack.png" width="396" height="53" border="0"></p></a>
-					<!-- <p class="registerNonDealers">open nonDealers</p>-->
+					 <a href="http://www.infiniti.com"><p class="gotoWebsite"><img src="images/thankyouBack.png"></p></a>
+					
 				</article>
 			</section>
 		
 			
-			<footer class="thankyou">
+			
+
+	</div>
+<div class="footer">
 				<ul>
-					<li>&copy; 2012 INFINITY</li>
-					<li>>> DISCOVER <span>OUR STORIES</span></li>
-					<li>>> INFINITI <span>COMMUNITY</span></li>
-					<li>>> FOLLOW <span>INFINITI</span></li>
+					<li>&copy; 2012 INFINITI</li>
+					<li class="Discover">>> DISCOVER <span>OUR STORIES</span></li>
+					<li class="community">>> INFINITI <span>COMMUNITY</span></li>
+					<li class="follow">>> FOLLOW <span>INFINITI</span></li>
 					<li class="socialT"></li>
                     <li class="socialF"></li>
 					<li><a href="http://www.infiniticars.com.au">www.infiniticars.com.au</a></li>
 				</ul>
-			</footer>
-
-	</div>
-    
- <script type="text/javascript" src="js/validScript.js"></script>
-
+			</div>
 </body>
 
 </html>

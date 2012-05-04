@@ -39,6 +39,7 @@ returnCity.add( Validate.Presence );
 	var guest_returnCity;
 	var guest_departureCity;
 	var guest_expiry;
+	var guest_dob;
 	var guest_emergencyPhone;
 	var guest_emergencyContact;
 	
@@ -47,6 +48,9 @@ returnCity.add( Validate.Presence );
 
 guest_surname = new LiveValidation( 'guest_surname', {onlyOnSubmit: true } );
 guest_surname.add( Validate.Presence );
+
+guest_dob = new LiveValidation( 'guest_dob', {onlyOnSubmit: true } );
+guest_dob.add( Validate.Presence );
 
 guest_firstname = new LiveValidation( 'guest_firstname', {onlyOnSubmit: true } );
 guest_firstname.add( Validate.Presence );
@@ -93,6 +97,7 @@ $('#guestCheck2').click(function() {
 	guest_returnCity.enable();
 	guest_departureCity.enable();
 	guest_expiry.enable();
+	guest_dob.enable();
 	guest_emergencyPhone.enable();
 	guest_emergencyContact.enable();
 	
@@ -107,12 +112,19 @@ $('#guestCheck1').click(function() {
 	guest_returnCity.disable();
 	guest_departureCity.disable();
 	guest_expiry.disable();
+	guest_dob.disable();
 	guest_emergencyPhone.disable();
 	guest_emergencyContact.disable();
 	
 });
 
-
+$('#stayRadio1').click(function() {
+	stay.disable();
+	});
+	
+$('#stayRadio2').click(function() {
+	stay.enable();
+	});
 
 
 
@@ -127,6 +139,19 @@ $('#submit').click(function() {
 	var guest_gender = $('input:radio[name=guest_gender]:checked').val();
 	
 	var guest = $('input:radio[name=guest]:checked').val();
+	
+	var stayButton = $('input:radio[name=stay]:checked').val();
+	
+
+	if (stayButton == "Yes"){
+		
+		stay.enable();
+		
+		} else {
+		stay.disable();
+		}
+	
+	
 	if (guest == 'Yes'){
 		
 		
@@ -137,6 +162,7 @@ $('#submit').click(function() {
 		guest_returnCity.enable();
 		guest_departureCity.enable();
 		guest_expiry.enable();
+		guest_dob.enable();
 		guest_emergencyPhone.enable();
 		guest_emergencyContact.enable();
 		
@@ -164,6 +190,7 @@ $('#submit').click(function() {
 			guest_returnCity.disable();
 			guest_departureCity.disable();
 			guest_expiry.disable();
+			guest_dob.disable();
 			guest_emergencyPhone.disable();
 			guest_emergencyContact.disable();
 			}

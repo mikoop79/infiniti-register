@@ -26,7 +26,8 @@ include './includes/Database.php';
 	$phoneNumber=$_POST['phoneNumber'];
 	$pickUp=$_POST['pickUp'];
 	$stay = $_POST['stay'] . ", " .$_POST['stayInfo'];
-
+	$confirm = $_POST['confirm'];
+	//echo $confirm;
 	// Boolean for checking for Guest.....
 	$hasGuest = false;
 
@@ -107,7 +108,8 @@ include './includes/Database.php';
 			$guestID,
 			$size,
 			$gender,
-			$user_type
+			$user_type,
+			$confirm
 			);
 	 
   
@@ -119,7 +121,7 @@ include './includes/Database.php';
 	 	 	
 	 	 	if($userAdded){
 	 	 		
-	 	 		header('Location: thankYou.php');
+	 	 		header('Location: thankyou.html');
 	 	 	}
 	 	 	
 	 	 	

@@ -25,7 +25,7 @@ include './includes/Database.php';
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Infiniti</title>
+<title>Infiniti New Zealand Drive Experience</title>
 <link rel="stylesheet" href="css/fontstack.css"  type="text/css" media="all" />
 <link rel="stylesheet" href="css/style.css"  type="text/css" media="screen" />
 <link rel="stylesheet" href="css/validation.css"  type="text/css" media="all" />
@@ -33,7 +33,17 @@ include './includes/Database.php';
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
 <script type="text/javascript" src="js/validation.js"></script>
 <script type="text/javascript" src="js/calls.js"></script>
-
+<!--[if IE 6]>
+<script src="./js/DD_belatedPNG.js"></script>
+<script>
+  /* EXAMPLE */
+  DD_belatedPNG.fix('.registerDealers, #dealer, #submit, .submmitBtn:hover, .submmitBtn ');
+  
+  /* string argument can be any CSS selector */
+  /* .png_bg example is unnecessary */
+  /* change it to what suits you! */
+</script>
+<![endif]-->
 </head>
 
 <body>
@@ -55,21 +65,34 @@ including fine food, exhilarating roads and world-renowned scenery.
 			</section>
 			<!-- DEALER - FORM - PANEL -->		
 			<section id="dealer">
-            <div id="close"><a href="#"><img src='images/closeBtn.png' /></a></div>
+            <div id="close"><a href="#" style="border:0;"><img src='images/closeBtn.png' border="0" /></a></div>
 				<form action="nonDealers.php" method="POST">
 					<article>
 					<p class="HL2">Registration Form - New Zealand Drive Experience</p>
-					<div class="line darkPurple" ></div>
+					
                     <p style="width:100%;">
                     Please confirm your details so that a detailed itinerary can be sent prior to the event.
                     </p>
-                    <p style="width:100%;">
-                    Date of Event: Please confirm you are available to travel <?php if (isset($user)){ echo $user[0]['travelDepart'];} ?>
-                    </p>
+                    <div class="line darkPurple" ></div>
+                    <p style="width:600px; display:inline-block;">
+                    <span class="event">Date of Event: </span>Please confirm you are available to travel <?php if (isset($user)){ echo $user[0]['travelDepart'];} ?>
+                    </p>  
+                    
+                    <div class="guests" style="float:right; width:200px; margin:5px 0 0 0;">
+						<div class="sizes inline" style="">
+							
+							<input type="radio" id="confirm1" name="confirm" value="No" class="radioBig"  />
+							<p>No</p>
+						</div>	
+						<div class="inline sizes">
+						    <input type="radio" id="confirm2" name="confirm" value="Yes" class="radioBig" checked/>
+						    <p>Yes</p>
+						</div>
+						</div>
                      <h1>PERSONAL DETAILS</h1>
-                    <div class="line whiteLine" ></div>
-					<div class="row1 title">
-					<label for="title">Title*</label>
+                    <div class="line whiteLine"></div>
+					<div class="title">
+					<label for="title" class="titleLable">Title*</label>
 					<select name="title" id="title">
 							<option value="Mr">Mr</option>
 							<option value="Mrs">Mrs</option>
@@ -259,12 +282,12 @@ including fine food, exhilarating roads and world-renowned scenery.
 								</div>
 								<div class="stays">
                                 	<label for="stay">Will you be extending your stay in QueensTown?</label>
-									<input type="radio" id="stayRadio" name="stay" value="No" class="radioBig" checked />
+									<input type="radio" id="stayRadio1" name="stay" value="No" class="radioBig" checked />
 									<p>No</p>
 									
-						    		<input type="radio" id="stayRadio" name="stay" value="Yes" class="radioBig"/>
+						    		<input type="radio" id="stayRadio2" name="stay" value="Yes" class="radioBig"/>
 						    		<p>Yes</p>
-						    		<input type="text" id="stay" name="stayInfo" value="" placeholder="Return Dates" style="width:250px; margin:0 0 0 0;" />
+						    		<input type="text" id="stay" name="stayInfo" value="" placeholder="Return Dates" />
 						    	</div>
 						    </div>
 						    <input type="hidden" name="email" value="<?php if (isset($_GET['email'])){ echo $_GET['email']; } else { echo 'default@default.com';} ?>">
@@ -281,19 +304,20 @@ including fine food, exhilarating roads and world-renowned scenery.
 			</section>
 			
 		
-			<footer>
+			
+
+	</div>
+    <div class="footer">
 				<ul>
 					<li>&copy; 2012 INFINITI</li>
-					<li>>> DISCOVER <span>OUR STORIES</span></li>
-					<li>>> INFINITI <span>COMMUNITY</span></li>
-					<li>>> FOLLOW <span>INFINITI</span></li>
+					<li class="Discover">>> DISCOVER <span>OUR STORIES</span></li>
+					<li class="community">>> INFINITI <span>COMMUNITY</span></li>
+					<li class="follow">>> FOLLOW <span>INFINITI</span></li>
 					<li class="socialT"></li>
                     <li class="socialF"></li>
 					<li><a href="http://www.infiniticars.com.au">www.infiniticars.com.au</a></li>
 				</ul>
-			</footer>
-
-	</div>
+			</div>
  <script type="text/javascript" src="js/validScript.js"></script>
 
 </body>

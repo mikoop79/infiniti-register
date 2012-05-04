@@ -82,7 +82,7 @@ public static function addUser(array $values){
 //				$sql = "INSERT INTO `infiniti_driveday`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `expiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergencyPhone`, `MailAddress`, `phoneNumber`, `pickUp`, `guestId`, `size`, `gender`, `date`, `user_type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?);";
 				
 				
-				$sql = "INSERT INTO `infiniti_driveday`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `expiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergencyPhone`, `MailAddress`, `phoneNumber`, `pickUp`, `stay`, `guestId`, `size`, `gender`, `date`, `user_type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?);";
+				$sql = "INSERT INTO `infiniti_driveday`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `expiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergencyPhone`, `MailAddress`, `phoneNumber`, `pickUp`, `stay`, `guestId`, `size`, `gender`, `date`, `user_type`, `confirm`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?, ?);";
 				
 			try {
 		      		$statement = $database->pdo->prepare($sql);
@@ -196,7 +196,4 @@ if (count($result) > 0) {
 
 } // end of database class
 
-
-
 ?>
-

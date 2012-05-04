@@ -7,14 +7,52 @@ $(document).ready(function (){
 	$("#dealer").css({opacity:"1"});
 	
 	// #########################   Social ######################
-	var facebook = $(".socialF , footer ul li:contains('INFINITI')")
-	var twitter = $(".socialT , footer ul li:contains('FOLLOW')")
+	var facebook = $(".socialF")
+	var twitter = $(".socialT")
+	var discover = $(".Discover")
+	var follow = $(".follow")
+	var community = $(".community")
 	twitter.hover(function(){
 		$(this).css({cursor:"pointer"});
 		})
 	twitter.click(function(){
-		  var url = "http://www.google.com";
-		  var windowName = "_self";
+		  var url = "https://twitter.com/#!/infinitiaus";
+		  var windowName = "_blank";
+		   window.open(url, windowName);
+		 });
+		 
+	facebook.hover(function(){
+		$(this).css({cursor:"pointer"});
+		})
+	facebook.click(function(){
+		  var url = "http://www.facebook.com/infiniti";
+		  var windowName = "_blank";
+		   window.open(url, windowName);
+		 });
+		 
+	discover.hover(function(){
+		$(this).css({cursor:"pointer"});
+		})
+	discover.click(function(){
+		  var url = "http://www.infiniti.com/au/stories/our_brand.html";
+		  var windowName = "_blank";
+		   window.open(url, windowName);
+		 });
+	follow.hover(function(){
+		$(this).css({cursor:"pointer"});
+		})
+	follow.click(function(){
+		  var url = "http://www.youtube.com/infiniti";
+		  var windowName = "_blank";
+		   window.open(url, windowName);
+		 });
+		 
+		 community.hover(function(){
+		$(this).css({cursor:"pointer"});
+		})
+	community.click(function(){
+		  var url = "http://www.infiniti.com/au/";
+		  var windowName = "_blank";
 		   window.open(url, windowName);
 		 });
 /*	######################################## form ##############################################
