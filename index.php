@@ -1,21 +1,22 @@
 <?php
 
-
 include './includes/Database.php';
 
 
-//	if (isset($_GET['email'])){
-//		$email = $_GET['email'];
-//		
-//		$user = Database::prePopulate($email);
-//		
+	if (isset($_GET['email']) && isset($_GET['user_type'])){
+		$email = $_GET['email'];
+		$user_type = $_GET['user_type'];
+		$user = Database::prePopulate($email);
+		
 //    echo '<pre>';
 //	print_r($user);
 //	echo '</pre>';
-//	
-//	} else {
-//		header('Location: notInvited.html');
-//	}
+	
+	} else {
+		header('Location: notInvited.html');
+		
+		exit;
+	}
 
 ?>
 
@@ -25,6 +26,7 @@ include './includes/Database.php';
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Infiniti</title>
+<link rel="stylesheet" href="css/fontstack.css"  type="text/css" media="all" />
 <link rel="stylesheet" href="css/style.css"  type="text/css" media="screen" />
 <link rel="stylesheet" href="css/validation.css"  type="text/css" media="all" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
@@ -41,15 +43,19 @@ include './includes/Database.php';
 				<article id="welcomeMsg">
 					<p class="HL1">Your inspirational <br>
 journey starts here.</p>
-					 <p>The Infiniti New Zealand Test Drive Experience will take place in early June 2012 and will showcase two exciting vehicles, the Infiniti FX performance cross-over and the Infiniti M sedan.<br>
-Your experience will showcase in the best Queenstown has to offer including fine food, exhilarating roads and world-renowned scenery.
+					 <p class="para">The Infiniti New Zealand Test Drive Experience will take place in<br>
+early June 2012 and will showcase two exciting vehicles, the Infiniti FX<br>
+performance cross-over and the Infiniti M sedan.</p>
+                     <p class="para">Your experience will showcase in the best Queenstown has to offer<br>
+including fine food, exhilarating roads and world-renowned scenery.
 </p>
-					 <a href="#"><p class="registerDealers"><img src="images/confirm.png"></p></a>
+					 <a href="#"><p class="registerDealers"><img src="images/confirm.png" width="379" height="57" border="0"></p></a>
 					<!-- <p class="registerNonDealers">open nonDealers</p>-->
 				</article>
 			</section>
 			<!-- DEALER - FORM - PANEL -->		
 			<section id="dealer">
+            <div id="close"><a href="#"><img src='images/closeBtn.png' /></a></div>
 				<form action="nonDealers.php" method="POST">
 					<article>
 					<p class="HL2">Registration Form - New Zealand Drive Experience</p>
@@ -58,7 +64,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
                     Please confirm your details so that a detailed itinerary can be sent prior to the event.
                     </p>
                     <p style="width:100%;">
-                    Date of Event: Please confirm you are available to travel "ADD DATE HERE"
+                    Date of Event: Please confirm you are available to travel <?php if (isset($user)){ echo $user[0]['travelDepart'];} ?>
                     </p>
                      <h1>PERSONAL DETAILS</h1>
                     <div class="line whiteLine" ></div>
@@ -73,34 +79,34 @@ Your experience will showcase in the best Queenstown has to offer including fin
 					</div>
 						<div class="row1 surname">
 							<label for="surname">Surname: *</label>
-							<input type="text" name="surname" id="surname" value="" />
+							<input type="text" name="surname" id="surname" value="<?php if (isset($user)){ echo $user[0]['surname'];} ?>" />
 							
 						</div>
 						<div class="row1 firstname">
 							<label for="firstname">First name: *</label>
-							<input type="text" name="firstname" id="firstname" value="" />
+							<input type="text" name="firstname" id="firstname" value="<?php if (isset($user)){ echo $user[0]['firstname'];} ?>" />
 							
 						</div>
 						<div class="row2 dob">
-							<label for="dob">Date of Birth: *</label><input type="text" placeholder="DD/MM/YYYY" name="dob" id="dob" value="" />
+							<label for="dob">Date of Birth: *</label><input type="text" placeholder="DD/MM/YYYY" name="dob" id="dob" value="<?php if (isset($user)){ echo $user[0]['dob'];} ?>" />
 						</div>
 						<div class="row2 passport">
-							<label for="ppNumber">Passport Number: *</label><input type="text" name="ppNumber" id="ppNumber" value="" />
+							<label for="ppNumber">Passport Number: *</label><input type="text" name="ppNumber" id="ppNumber" value="<?php if (isset($user)){ echo $user[0]['ppNumber'];} ?>" />
 						</div>
 						<div class="row2 expiry">
 							<label for="expiry">Passport Expiry: *</label><input type="text" name="expiry" id="expiry" value="" />
 						</div>
 						<div class="row3 fflyer">
-							<label for="frequentFlyerNo">Frequent Flyer No:</label><input type="text" name="frequentFlyerNo" id="frequentFlyerNo" value="" />
+							<label for="frequentFlyerNo">Frequent Flyer No:</label><input type="text" name="frequentFlyerNo" id="frequentFlyerNo" value="<?php if (isset($user)){ echo $user[0]['ffNumber'];} ?>" />
 						</div>
 						<div class="row3 depCity">
-							<label for="departureCity">Departure City: *</label><input type="text" name="departureCity" id="departureCity" value="" />
+							<label for="departureCity">Departure City: *</label><input type="text" name="departureCity" id="departureCity" value="<?php if (isset($user)){ echo $user[0]['depCity'];} ?>" />
 						</div>
 						<div class="row3 retCity">
-							<label for="returnCity">Return City: *</label><input type="text" name="returnCity" id="returnCity" value="" />
+							<label for="returnCity">Return City: *</label><input type="text" name="returnCity" id="returnCity" value="<?php if (isset($user)){ echo $user[0]['retCity'];} ?>" />
 						</div>
 						<div class="row4 dietaryReq">
-							<label for="dietaryRequirements">Dietary Requirements: <span>(Any other considerations to note)</span></label><input name="dietaryRequirements" id="dietaryRequirements" value="" />
+							<label for="dietaryRequirements">Dietary Requirements: <span>(Any other considerations to note)</span></label><input name="dietaryRequirements" id="dietaryRequirements" value="<?php if (isset($user)){ echo $user[0]['dietaryRequirements'];} ?>" />
 						</div>
 						<div class="row1 mail">
 							<label for="emergencyContact">Emergency Contact: *</label>
@@ -138,6 +144,8 @@ Your experience will showcase in the best Queenstown has to offer including fin
 									<p>FEMALE</p>
 								</div>	<!--  end of genders -->
 						</div><!--  end of size -->
+						
+						<?php if ($user_type == 1): { ?>
 						<div class="guests">
 						<div class="sizes inline" style="">
 							<label for name="guest">Do you have a guest?</label>
@@ -149,7 +157,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						    <p>Yes</p>
 						</div>
 						</div>
-						
+						<?php } endif; ?>
 							
 								<div class="guestInfo">
 							<h1>GUEST DETAILS</h1>
@@ -238,28 +246,30 @@ Your experience will showcase in the best Queenstown has to offer including fin
 								<h1>CONTACT DETAILS</h1>
 								<div class="line whiteLine"></div>
 								<div class="row1 mail">
-									<label for="MailAddress">Mailing Address*</label>
-									<input type="text" name="MailAddress" id="mailAddress" value="" />
+									<label for="mailAddress">Mailing Address*</label>
+									<input type="text" name="mailAddress" id="mailAddress" value="<?php if (isset($user)){ echo $user[0]['mailAddress'];} ?>" />
 								</div>
 								<div class="row1 phone">
 									<label for="phoneNumber">Phone number*</label>
-									<input type="text" name="phoneNumber" id="phoneNumber" value="" />
+									<input type="text" name="phoneNumber" id="phoneNumber" value="<?php if (isset($user)){ echo $user[0]['phone'];} ?>" />
 								</div>
                                 <div class="row1 pickUp">
 									<label for="pickUp">Pick Up Address*</label>
 									<input type="text" name="pickUp" id="pickUp" value="" />
 								</div>
 								<div class="stays">
-                                	<label for="stay">Will you be extending your stay in QeensTown?</label>
-									<input type="radio" id="stay" name="stay" value="No" class="radioBig" checked />
+                                	<label for="stay">Will you be extending your stay in QueensTown?</label>
+									<input type="radio" id="stayRadio" name="stay" value="No" class="radioBig" checked />
 									<p>No</p>
 									
-						    		<input type="radio" id="stay" name="stay" value="Yes" class="radioBig"/>
+						    		<input type="radio" id="stayRadio" name="stay" value="Yes" class="radioBig"/>
 						    		<p>Yes</p>
-						    		<input type="text" id="stay" name="stayInfo" value="" placeholder="More Info" style="width:200px;" />
+						    		<input type="text" id="stay" name="stayInfo" value="" placeholder="Return Dates" style="width:250px; margin:0 0 0 0;" />
 						    	</div>
 						    </div>
-						    <input type="submit" value="Submit" id="submit" class="submmitBtn" />
+						    <input type="hidden" name="email" value="<?php if (isset($_GET['email'])){ echo $_GET['email']; } else { echo 'default@default.com';} ?>">
+						    <input type="hidden" name="user_type" value="<?php if (isset($_GET['user_type'])){ echo $_GET['user_type']; } else { echo 2;}  ?>">
+						    <input type="submit" value="" id="submit" class="submmitBtn" />
 						</div> <!--  end of contact details -->
 						
 						
@@ -270,29 +280,21 @@ Your experience will showcase in the best Queenstown has to offer including fin
 				</form>
 			</section>
 			
-			<!--NON  DEALER - FORM - PANEL -->		
-			<section id="nonDealer">
-				<form action="addNon-Dealer.php" method="post">
-					<article>
-						
-					</article>
-				</form>
-			</section>
-			
+		
 			<footer>
 				<ul>
-					<li>&copy; 2012 INFINITY</li>
+					<li>&copy; 2012 INFINITI</li>
 					<li>>> DISCOVER <span>OUR STORIES</span></li>
 					<li>>> INFINITI <span>COMMUNITY</span></li>
 					<li>>> FOLLOW <span>INFINITI</span></li>
 					<li class="socialT"></li>
                     <li class="socialF"></li>
-					<li>www.infiniticars.com.au</li>
+					<li><a href="http://www.infiniticars.com.au">www.infiniticars.com.au</a></li>
 				</ul>
 			</footer>
 
 	</div>
- <script type="text/javascript" src="js/svalidScript.js"></script>
+ <script type="text/javascript" src="js/validScript.js"></script>
 
 </body>
 

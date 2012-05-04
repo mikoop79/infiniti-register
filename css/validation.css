@@ -33,7 +33,7 @@ input.LV_valid_field:hover,
 input.LV_valid_field:active,
 textarea.LV_valid_field:hover, 
 textarea.LV_valid_field:active {
-    border: 2px solid #005735;
+    border: 2px solid #663366;
 }
     
 .LV_invalid_field, 
@@ -41,5 +41,5 @@ input.LV_invalid_field:hover,
 input.LV_invalid_field:active,
 textarea.LV_invalid_field:hover, 
 textarea.LV_invalid_field:active {
-    border: 3px solid #c50273;
+    border: 2px solid #c50273;
 }

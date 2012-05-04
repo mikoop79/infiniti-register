@@ -6,22 +6,33 @@ $(document).ready(function (){
 	
 	$("#dealer").css({opacity:"1"});
 	
-	
-	
+	// #########################   Social ######################
+	var facebook = $(".socialF , footer ul li:contains('INFINITI')")
+	var twitter = $(".socialT , footer ul li:contains('FOLLOW')")
+	twitter.hover(function(){
+		$(this).css({cursor:"pointer"});
+		})
+	twitter.click(function(){
+		  var url = "http://www.google.com";
+		  var windowName = "_self";
+		   window.open(url, windowName);
+		 });
 /*	######################################## form ##############################################
 	*/
 	$('#dealer span:contains("insert")').addClass("pink");
 	$('#dealer label[for!="X"]').addClass("lableFont");
 	
-	
+	var dealer = $("#dealer");
 	$("p.registerDealers").click(function () { 
-	      var dealer = $("#dealer");
+	      
 	    	  dealer.animate({left:"47px"});
-	    	
 			  
 	    });
 	
-	
+	$("#close").click(function() {
+		
+		dealer.animate({left:"-=1000px"});
+		})
 	
 	
 	$('input#guestCheck1').click(function() {

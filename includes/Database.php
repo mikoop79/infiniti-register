@@ -8,11 +8,17 @@ class Database {
 //   private static $db_username   = 'root';
 //   private static $db_password   = 'coop';
   // 
+// private static $db_host       = 'localhost';
+// private static $db_port       = '8888';
+// private static $db_name       = 'infiniti';
+// private static $db_username   = 'root';
+// private static $db_password   = 'root';
+ 
  private static $db_host       = 'localhost';
- private static $db_port       = '8888';
- private static $db_name       = 'root';
- private static $db_username   = 'root';
- private static $db_password   = 'root';
+ private static $db_port       = '3306';
+ private static $db_name       = 'infiniti_driveday';
+ private static $db_username   = 'infiniti_admin';
+ private static $db_password   = 'fishskills';
  
   
   
@@ -44,7 +50,11 @@ public static function addGuest(array $values){
 	
 
 			  	$database = new Database();
-				$sql = "INSERT INTO `infiniti`.`guest` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `size`, `gender`, `date`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP);";
+				$sql = "INSERT INTO `infiniti_driveday`.`guest` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `guestExpiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergenyPhone`, `size`, `gender`, `date`) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP);";
+				
+				
+				
+				
 			try {
 		      		$statement = $database->pdo->prepare($sql);
 		      		$return = $statement->execute($values);
@@ -69,7 +79,10 @@ public static function addUser(array $values){
 	
 				$id = true;
 			  	$database = new Database();
-				$sql = "INSERT INTO `infiniti`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `MailAddress`, `phoneNumber`, `phoneUp`, `guestId`, `size`, `gender`, `date`, `user_type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?);";
+//				$sql = "INSERT INTO `infiniti_driveday`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `expiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergencyPhone`, `MailAddress`, `phoneNumber`, `pickUp`, `guestId`, `size`, `gender`, `date`, `user_type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?);";
+				
+				
+				$sql = "INSERT INTO `infiniti_driveday`.`data` (`title`, `firstname`, `surname`, `dob`, `ppNumber`, `expiry`, `frequentFlyerNo`, `departureCity`, `returnCity`, `dietaryRequirements`, `emergencyContact`, `emergencyPhone`, `MailAddress`, `phoneNumber`, `pickUp`, `stay`, `guestId`, `size`, `gender`, `date`, `user_type`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, ?);";
 				
 			try {
 		      		$statement = $database->pdo->prepare($sql);
@@ -87,6 +100,8 @@ public static function addUser(array $values){
         return $id; 
     }
 }
+
+
 public static function showerror() {
   die("Error " . mysql_errno() . " : " . mysql_error());
 }

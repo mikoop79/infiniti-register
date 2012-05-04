@@ -9,3 +9,5 @@ function mysqlclean($array, $index, $maxlength, $connection) {
   }
   return NULL;
 }
+
+?>

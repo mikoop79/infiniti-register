@@ -1,0 +1,44 @@
+@font-face {
+	/* Book */
+	font-family: MetaPro;
+	font-style: normal;
+	font-weight: 300;
+	src: url('../fonts/MetaCompPro-Book.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/MetaCompPro-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/MetaCompPro-Book.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/MetaCompPro-Book.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+	
+@font-face {
+	/* Normal */
+	font-family: MetaPro;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/MetaCompPro-Normal.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/MetaCompPro-Normal.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/MetaCompPro-Normal.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/MetaCompPro-Normal.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+	
+@font-face {
+	/* Medium */
+	font-family: MetaPro;
+	font-style: normal;
+	font-weight: 500;
+	src: url('../fonts/MetaCompPro-Medium.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/MetaCompPro-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/MetaCompPro-Medium.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/MetaCompPro-Medium.ttf')  format('truetype'); /* Safari, Android, iOS */
+}
+	
+
+@font-face {
+	/* Bold */
+	font-family: MetaPro;
+	font-style: normal;
+	font-weight: 700;
+	src: url('../fonts/MetaCompPro-Bold.eot'); /* IE9 Compat Modes */
+	src: url('../fonts/MetaCompPro-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('../fonts/MetaCompPro-Bold.woff') format('woff'), /* Modern Browsers */
+	     url('../fonts/MetaCompPro-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+}

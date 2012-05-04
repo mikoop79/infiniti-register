@@ -39,7 +39,7 @@
 				<article id="welcomeMsg">
 					<p class="HL1">Your inspirational <br>
 journey starts here.</p>
-					 <p>The Infiniti New Zealand Test Drive Experience will take place in early June 2012 and will showcase two exciting vehicles, the Infiniti FX performance cross-over and the Infiniti M sedan.<br>
+					 <p>The Infiniti New Zealand Test Drive Experience will take place in early June 2012 and will showcase two exciting vehicles, the Infiniti FX performance cross-over and the Infiniti M sedan.<br><br>
 Your experience will showcase in the best Queenstown has to offer including fine food, exhilarating roads and world-renowned scenery.
 </p>
 					 <a href="#"><p class="registerDealers"><img src="images/confirm.png"></p></a>
@@ -48,6 +48,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 			</section>
 			<!-- DEALER - FORM - PANEL -->		
 			<section id="dealer">
+            <div id="close"><a href="#"><img src='images/closeBtn.png' /></a></div>
 				<form action="addDealer.php" method="GET">
 					<article>
 					<p class="HL2">Registration Form - New Zealand Drive Experience</p>
@@ -236,7 +237,7 @@ Your experience will showcase in the best Queenstown has to offer including fin
 						
 						
 						
-						<input type="submit" value="Submit" id="submit" class="submmitBtn" />
+						<input type="submit" value="" id="submit" class="submmitBtn" />
 					</article>
 				</form>
 			</section>
@@ -258,12 +259,12 @@ Your experience will showcase in the best Queenstown has to offer including fin
 					<li>>> FOLLOW <span>INFINITI</span></li>
 					<li class="socialT"></li>
                     <li class="socialF"></li>
-					<li>www.infiniticars.com.au</li>
+					<li><a href="http://www.infiniticars.com.au">www.infiniticars.com.au</a></li>
 				</ul>
 			</footer>
 
 	</div>
-    
+    <script type="text/javascript" src="js/calls.js"></script>
  <script type="text/javascript" src="js/validScript.js"></script>
 
 </body>

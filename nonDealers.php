@@ -1,31 +1,10 @@
 <?php
-include './includes/functions.php';
+
 include './includes/Database.php';
 
-$dealerID = 1;
-$nonDealerID = 2;
 
 
-	//checkUsers deails
-	$email = $_POST['email'];
-	
-	$emailExists = Database::checkEmail($email);
-	//echo "-". $email . "-";
-	if (!$emailExists || $email == '' || $email= null){
-		
-			header("Location: notInvited.html");
-			exit;
-			
-	} else {
-		
-		echo $email . ' exists.';
-		
-		
-	}
-	 	
-	 	
-
-
+	$user_type = $_POST['user_type'];
 	// dealer details
 	$title=$_POST['title'];
 	$surname=$_POST['surname'];
@@ -46,6 +25,7 @@ $nonDealerID = 2;
 	$mailAddress=$_POST['mailAddress'];
 	$phoneNumber=$_POST['phoneNumber'];
 	$pickUp=$_POST['pickUp'];
+	$stay = $_POST['stay'] . ", " .$_POST['stayInfo'];
 
 	// Boolean for checking for Guest.....
 	$hasGuest = false;
@@ -54,8 +34,8 @@ $nonDealerID = 2;
 	if ($guest == 'Yes'){
 		$hasGuest = true;
 		$guest_title = $_POST['guest_title'];
-		$guest_surname = $_POST['guest_surname'];
 		$guest_firstname = $_POST['guest_firstname'];
+		$guest_surname = $_POST['guest_surname'];
 		$guest_dob = $_POST['guest_dob'];
 		$guest_ppNumber = $_POST['guest_ppNumber'];
 		$guest_expiry = $_POST['guest_expiry'];
@@ -69,10 +49,7 @@ $nonDealerID = 2;
 		$guest_gender = $_POST['guest_gender'];	
 	}
 
-	
-	
-	
-	
+
 	// add guest values to array for PDO insert. 
 	if ($hasGuest){
 	
@@ -82,16 +59,19 @@ $nonDealerID = 2;
 			$guest_firstname,
 			$guest_dob,
 			$guest_ppNumber,
+			$guest_expiry,
 			$guest_frequentFlyerNo,
 			$guest_departureCity,
 			$guest_returnCity,
 			$guest_dietaryRequirements,
+			$guest_emergencyContact,
+			$guest_emergencyPhone,
 			$guest_size,
 			$guest_gender
 		);
 	
 		
-	$email = Database::addGuest($guestValues);	
+	//$email = Database::addGuest($guestValues);	
 //	echo '<pre>';
 //	print_r(count($guestValues));
 //	echo '/<pre>';
@@ -109,21 +89,25 @@ $nonDealerID = 2;
 	
 	$nonDealers = array(
 			$title,
-			$surname,
 			$firstname,
+			$surname,
 			$dob,
 			$ppNumber,
+			$expiry,
 			$frequentFlyerNo,
 			$departureCity,
 			$returnCity,
 			$dietaryRequirements,
+			$emergencyContact,
+			$emergencyPhone,
 			$mailAddress,
 			$phoneNumber,
 			$pickUp,
+			$stay,
 			$guestID,
 			$size,
 			$gender,
-			$nonDealerID
+			$user_type
 			);
 	 
   
@@ -135,7 +119,7 @@ $nonDealerID = 2;
 	 	 	
 	 	 	if($userAdded){
 	 	 		
-	 	 		
+	 	 		header('Location: thankYou.php');
 	 	 	}
 	 	 	
 	 	 	
